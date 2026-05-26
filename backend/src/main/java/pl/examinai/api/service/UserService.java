@@ -27,4 +27,15 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public String authenticate(String email, String password) {
+        User user = userRepository.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("Invalid email or password"));
+
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            throw new RuntimeException("Invalid email or password");
+        }
+
+        return jwtService.generateToken(user.getEmail());
+    }
+
 }
