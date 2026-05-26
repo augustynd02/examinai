@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.examinai.api.model.User;
 import pl.examinai.api.service.UserService;
 import pl.examinai.api.dto.LoginRequest;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/users")
