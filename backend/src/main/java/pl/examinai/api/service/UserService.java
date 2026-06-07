@@ -6,7 +6,6 @@ import pl.examinai.api.model.User;
 import pl.examinai.api.repository.UserRepository;
 import pl.examinai.api.security.JwtService;
 
-
 @Service
 public class UserService {
     private final UserRepository userRepository;
